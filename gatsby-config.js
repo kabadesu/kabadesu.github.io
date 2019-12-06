@@ -16,6 +16,14 @@ module.exports = {
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `markdown`,
+                path: `${__dirname}/src/markdown`,
+            },
+        },
+        `gatsby-transformer-remark`,
+        {
             resolve: `gatsby-plugin-manifest`,
             options: {
                 name: `gatsby-starter-default`,
