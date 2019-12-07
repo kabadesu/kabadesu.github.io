@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 const path = require('path')
 
-exports.createPages = async({ actions, graphql, reporter }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions
     const blogPostTemplate = path.resolve('src/templates/blog.js')
     const result = await graphql(`
@@ -19,6 +19,7 @@ exports.createPages = async({ actions, graphql, reporter }) => {
                 edges {
                     node {
                         frontmatter {
+                            title
                             path
                         }
                     }
@@ -32,11 +33,16 @@ exports.createPages = async({ actions, graphql, reporter }) => {
         return
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const posts = result.data.allMarkdownRemark.edges
+
+    posts.forEach(({ node }, index) => {
         createPage({
             path: node.frontmatter.path,
             component: blogPostTemplate,
-            context: {}
+            context: {
+                prev: index === 0 ? null : posts[index - 1],
+                next: index === posts.length - 1 ? null : posts[index + 1],
+            },
         })
     })
 }

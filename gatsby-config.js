@@ -39,11 +39,11 @@ module.exports = {
             resolve: `gatsby-plugin-alias-imports`,
             options: {
                 alias: {
-                    "@components": "src/components",
-                    "@layouts": "src/layouts",
-                    "@pages": "src/pages",
-                    "@templates": "src/templates",
-                    "@posts": "content/posts",
+                    '@components': 'src/components',
+                    '@layouts': 'src/layouts',
+                    '@pages': 'src/pages',
+                    '@templates': 'src/templates',
+                    '@posts': 'content/posts',
                 },
                 extensions: [],
             },
