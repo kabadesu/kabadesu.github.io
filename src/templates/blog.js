@@ -8,8 +8,6 @@ export default function Template({ data, pageContext }) {
     const { markdownRemark } = data
     const { frontmatter, html } = markdownRemark
 
-    console.log(pageContext);
-
     const {next, prev} = pageContext;
 
     return (
