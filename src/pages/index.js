@@ -11,12 +11,11 @@ const IndexPage = (props) => (
         <SEO title="Home" />
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
-        <p><Link to="/blog/my-first-post">Blog post</Link></p>
         <p>Now go build something great.</p>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
             <Img fluid={props.data.placeholderImage.childImageSharp.fluid} />
         </div>
-        <Link to="/page-2/">Go to page 2</Link>
+        <Link to="/blog/">Blog</Link>
     </Layout>
 )
 
