@@ -21,7 +21,7 @@ const IndexPage = (props) => (
 
 export default IndexPage
 
-export const PageQuery = graphql`
+export const pageQuery = graphql`
     query {
         placeholderImage: file(
             relativePath: { eq: "gatsby-astronaut.png" }
