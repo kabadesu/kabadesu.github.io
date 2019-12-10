@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-blog-js","path":"/blog/old","result":{"data":{"markdownRemark":{"html":"<p>Post 0</p>","frontmatter":{"date":"May 04, 2015","path":"/blog/old","title":"Old one"}}},"pageContext":{"isCreatedByStatefulCreatePages":false,"next":{"frontmatter":{"title":"Test post 1","path":"/blog/test-1"}},"prev":null}}}
