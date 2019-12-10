@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Layout from '@layouts/layout'
-import SEO from '@components/seo'
+import Layout from "@layouts/layout"
+import SEO from "@components/seo"
 
 export default function Template({ data, pageContext }) {
     const { markdownRemark } = data
     const { frontmatter, html } = markdownRemark
 
-    const { next, prev } = pageContext
+    const {next, prev} = pageContext;
 
     return (
         <Layout>
@@ -19,15 +19,21 @@ export default function Template({ data, pageContext }) {
                 <div dangerouslySetInnerHTML={{ __html: html }}></div>
             </div>
 
-            <div>
-                {next && next.node && (<Link to={next.node.frontmatter.path}>{next.node.frontmatter.title}</Link>)}
-            </div>
+            {next && next.frontmatter && (
+                <div>
+                    <Link to={next.frontmatter.path}>&#8593; {next.frontmatter.title}</Link>
+                </div>
+            )}
+
+            {prev && prev.frontmatter && (
+                <div>
+                    <Link to={prev.frontmatter.path}>&#8595; {prev.frontmatter.title}</Link>
+                </div>
+            )}
 
             <div>
-                {prev && prev.node && (<Link to={prev.node.frontmatter.path}>{prev.node.frontmatter.title}</Link>)}
+                <Link to="/blog/">Back</Link>
             </div>
-
-            <Link to="/blog/">Back</Link>
         </Layout>
     )
 }
