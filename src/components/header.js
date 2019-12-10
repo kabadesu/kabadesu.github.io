@@ -28,11 +28,11 @@ const Header = ({ siteTitle, menuLinks }) => (
                 </Link>
             </h1>
             <nav>
-                <ul>
+                <ul style={{listStyleType: 'none', margin: 0}}>
                     {
                         menuLinks.map(link => (
-                            <li key={link.name}>
-                                <Link to={link.link} activeClassName="active">{link.name}</Link>
+                            <li key={link.name} style={{display: 'inline-block', marginRight: 20}}>
+                                <Link to={link.link} style={{color: 'white', textDecoration: 'none' }}activeClassName="active">{link.name}</Link>
                             </li>
                         ))
                     }
