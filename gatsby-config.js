@@ -23,6 +23,8 @@ module.exports = {
                 path: `${__dirname}/src/images`,
             },
         },
+        'gatsby-plugin-postcss',
+        'gatsby-plugin-astroturf',
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
