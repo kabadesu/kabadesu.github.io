@@ -15,7 +15,7 @@ const IndexPage = props => (
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
             <Img fluid={props.data.placeholderImage.childImageSharp.fluid} />
         </div>
-        <Link to="/blog/">Blog</Link>
+        <Link to="/blog">Blog</Link>
     </Layout>
 )
 
